@@ -209,11 +209,14 @@ public final class StubFtpServer implements Runnable {
      */
     public void start() {
         serverThread = new Thread(this);
-        serverThread.start();
-        
+
         // Wait until the thread is initialized
         synchronized(startLock){ 
             try {
+                // Start here in case server thread runs faster than main thread.
+                // See https://sourceforge.net/tracker/?func=detail&atid=1006533&aid=1925590&group_id=208647
+                serverThread.start();
+
                 startLock.wait();
             }
             catch (InterruptedException e) {
