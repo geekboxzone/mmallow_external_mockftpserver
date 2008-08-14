@@ -1,6 +1,12 @@
 MockFtpServer Change Log
 -------------------------------------------------------------------------------
 
+Changes in version 1.2.3 (13 Aug 2008)
+------------------------------------------
+- BUG FIX: Tracker item #2047355. Parse host IP numbers as unsigned bytes.
+  See https://sourceforge.net/tracker/index.php?func=detail&aid=2047355&group_id=208647&atid=1006533 
+
+
 Changes in version 1.2.2 (27 May 2008)
 ------------------------------------------
 - BUG FIX: Move serverThread.start() into synchronized block to avoid server hang if 

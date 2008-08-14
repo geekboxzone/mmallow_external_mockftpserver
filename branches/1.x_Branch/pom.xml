@@ -9,7 +9,7 @@
 	or failure scenarios. You can also verify expected command invocations. 
   </description>
   <packaging>jar</packaging>
-  <version>1.2.2</version>
+  <version>1.2.3</version>
   <url>http://mockftpserver.sourceforge.net/</url>
 
   <scm>
