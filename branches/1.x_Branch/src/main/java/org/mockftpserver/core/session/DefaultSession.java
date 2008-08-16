@@ -56,6 +56,7 @@ import org.mockftpserver.core.util.AssertFailedException;
 public class DefaultSession implements Session {
 
     private static final Logger LOG = Logger.getLogger(DefaultSession.class);
+    private static final String END_OF_LINE = "\r\n";
     static final int DEFAULT_CLIENT_DATA_PORT = 21;
     
     SocketFactory socketFactory = new DefaultSocketFactory();
@@ -219,7 +220,7 @@ public class DefaultSession implements Session {
      */
     private void writeLineToControlConnection(String line) {
         try {
-            controlConnectionWriter.write(line + "\n");
+            controlConnectionWriter.write(line + END_OF_LINE);
             controlConnectionWriter.flush();
         }
         catch (IOException e) {

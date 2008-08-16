@@ -238,8 +238,10 @@ public final class DefaultSession_RunTest extends AbstractTest {
 
         assertEquals("commandHandled", true, commandHandled);
 
-        String output = outputStream.toString().trim();
-        LOG.info("output=[" + output + "]");
+        String output = outputStream.toString();
+        LOG.info("output=[" + output.trim() + "]");
+        assertTrue("line ends with \\r\\n", 
+                output.charAt(output.length()-2) == '\r' && output.charAt(output.length()-1) == '\n');
         assertTrue("output: expected [" + expectedOutput + "]", output.indexOf(expectedOutput) != -1);
     }
 
