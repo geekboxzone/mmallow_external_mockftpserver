@@ -1,6 +1,14 @@
 MockFtpServer Change Log
 -------------------------------------------------------------------------------
 
+Changes in version 1.2.4 (01 Sep 2008)
+------------------------------------------
+- BUG FIX: StubFtpServer: Only execute serverSocket.close() if serverSocket != null.
+- BUG FIX: Terminate replies with <CRLF> (\r\n).
+- DOCS: Fix Getting Started Guide code example: setOverrideFinalReplyCode() to setFinalReplyCode().
+- DOCS: Add note to Getting Started Guide about calling setServerControlPort() if on Unix system.
+
+
 Changes in version 1.2.3 (13 Aug 2008)
 ------------------------------------------
 - BUG FIX: Tracker item #2047355. Parse host IP numbers as unsigned bytes.
