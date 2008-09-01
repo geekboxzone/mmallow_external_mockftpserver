@@ -268,7 +268,9 @@ public final class StubFtpServer implements Runnable {
             LOG.debug("Cleaning up server...");
             
             try {
-                serverSocket.close();
+                if (serverSocket != null) {
+                    serverSocket.close();
+                }
                 
                 for (Iterator iter = sessions.keySet().iterator(); iter.hasNext();) {
                     Session session = (Session) iter.next();
